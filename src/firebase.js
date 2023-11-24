@@ -10,7 +10,7 @@ initializeApp({
   credential: cert(serviceAccount),
 });
 
-const db = getFirestore();
+const firestore = getFirestore();
 const firebaseAuth = getAuth();
 
-export { db, firebaseAuth };
+export { firestore, firebaseAuth };

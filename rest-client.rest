@@ -2,5 +2,22 @@ POST http://localhost:8080/api/user/createUser
 content-type: application/json
 
 {
-    "phone": "052-4334433"
+    "phone": "+97254002278"
+}
+
+###
+POST http://localhost:8080/api/twilio/getOneTimePassword
+content-type: application/json
+
+{
+    "phone": "+972543002278"
+}
+
+###
+POST http://localhost:8080/api/twilio/verifyOneTimePassword
+content-type: application/json
+
+{
+    "phone": "+972543002278",
+    "code": "1071"
 }
