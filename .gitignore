@@ -1,0 +1,4 @@
+node_modules
+.env
+firebase-creds.json
+package-lock.json

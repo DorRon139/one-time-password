@@ -1,0 +1,6 @@
+POST http://localhost:8080/api/user/createUser
+content-type: application/json
+
+{
+    "phone": "052-4334433"
+}
