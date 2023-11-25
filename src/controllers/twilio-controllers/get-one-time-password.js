@@ -3,6 +3,9 @@ import { firestore, firebaseAuth } from "../../firebase.js";
 
 import { TWILIO_PHONE_NUMBER } from "../../../consts.js";
 
+const replacePrefix = (number) => {
+  if (number.substring(0, 1) === "0") return number.replace("0", "+972");
+};
 const getOneTimePassword = async (req, res) => {
   const {
     body: { phone },
@@ -19,7 +22,7 @@ const getOneTimePassword = async (req, res) => {
     const { errorMessage } = await twilio.messages.create({
       body: `Your code is ${code}`,
       from: TWILIO_PHONE_NUMBER,
-      to: `+${fixedPhone}`,
+      to: replacePrefix(fixedPhone),
     });
     if (errorMessage) throw new Error(errorMessage);
 
@@ -34,7 +37,8 @@ const getOneTimePassword = async (req, res) => {
       status: 200,
     });
   } catch (error) {
-    res.status(422).send({ error });
+    console.log(error);
+    res.status(500).send({ error });
   }
 };
 

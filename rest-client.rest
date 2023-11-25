@@ -2,7 +2,7 @@ POST http://localhost:8080/api/user/createUser
 content-type: application/json
 
 {
-    "phone": "+97254002278"
+    "phone": "+972543002278"
 }
 
 ###

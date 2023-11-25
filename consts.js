@@ -1,8 +1,10 @@
 import "dotenv/config";
 
-const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_PHONE_NUMBER } =
-  process.env;
-
-const PORT = 8080;
+const {
+  PORT = 8080,
+  TWILIO_AUTH_TOKEN,
+  TWILIO_ACCOUNT_SID,
+  TWILIO_PHONE_NUMBER,
+} = process.env;
 
 export { PORT, TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_PHONE_NUMBER };

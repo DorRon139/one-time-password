@@ -1,8 +1,9 @@
 import { firebaseAuth } from "../../firebase.js";
 
 const createUser = async (req, res) => {
-  const { body } = req;
-  const { phone } = body;
+  const {
+    body: { phone },
+  } = req;
 
   try {
     if (!phone) return res.status(422).send({ error: "Bad Input" });
